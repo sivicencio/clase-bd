@@ -34,10 +34,11 @@ if (!$_POST['fecha']) {
 if (!$_POST['tab'] ) {
    $res="Falta mesa";
 }
-echo "<form class='contacto'\n";
-echo "            <div><label>Resultado Operacion: $res</label></div>\n";
-echo "        </form>\n";
-
-
 $dbcon=null;
 ?>
+<form class='contacto'
+       <div><label>Resultado Operacion: <?php echo $res;?></label></div>
+</form>
+
+
+
