@@ -9,7 +9,7 @@
             <div><label>Mesa:</label><input type='text' name = 'tab'  value=''></div>
             <div><label>Fecha:</label><input type='text' name = 'fecha'  value=''></div>
             <div><label>Mensaje:</label><textarea rows='6'></textarea></div>
-            <div><input type='submit' value='Envia Mensaje'></div>
+            <div><input type='submit' value='Pedir Reserva'></div>
         </form>
     </body>
 </html>
