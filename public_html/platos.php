@@ -13,17 +13,17 @@ if ($_GET['precio']){
 }
 
 $sql= "SELECT name, description, price FROM plates WHERE price>'$precio';";
+?>
+<body>
+<table class = contacto >
+<tr>
+<td>Plato</td>
+<td>Descripción</td>
+<td>Precio</td>
+</tr>\n";
 
-echo "<body>\n";
-echo "<table class = contacto >\n";
-echo "<tr>\n";
-echo "<td>Plato</td>\n";
-echo "<td>Descripción</td>\n";
-echo "<td>Precio</td>\n";
-echo "</tr>\n";
 
-
-foreach($dbcon->query($sql) as $row)
+<?php foreach($dbcon->query($sql) as $row)
 {
   echo "<tr>\n";
   echo "<td>" .$row['name'] ."</td>\n";
