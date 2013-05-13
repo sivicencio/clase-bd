@@ -1,16 +1,36 @@
 <?php
-$dbcon = pg_connect("host=localhost dbname=grupo20 user=grupo20 password=MDA0MGQy");
 
-$result = pg_query($dbcon, "SELECT name, description, price FROM plates;");
-if (!$result) {
-  echo "An error occurred.\n";
-  exit;
+header('Content-Type: text/html; charset=utf-8');
+echo '<style type="text/css">';
+include 'estilos.css';
+echo '</style>';
+
+$dbcon = new PDO("pgsql:dbname=grupo20;host=localhost","grupo20","MDA0MGQy");
+
+$precio = 0;
+if ($_GET['precio']){
+	$precio =$_GET['precio'];
 }
 
-while ($row = pg_fetch_row($result)) {
-  echo "Plato: $row[0]  Descripción: $row[1] Precio: $row[2]";
-  echo "<br />\n";
+$sql= "SELECT name, description, price FROM plates WHERE price>'$precio';";
+
+echo "<body>\n";
+echo "<table class = contacto >\n";
+echo "<tr>\n";
+echo "<td>Plato</td>\n";
+echo "<td>Descripción</td>\n";
+echo "<td>Precio</td>\n";
+echo "</tr>\n";
+
+
+foreach($dbcon->query($sql) as $row)
+{
+  echo "<tr>\n";
+  echo "<td>" .$row['name'] ."</td>\n";
+  echo "<td>" .$row['description'] ."</td>\n";
+  echo "<td>" .$row['price'] ."</td>\n";
+  echo "</tr>\n";
 }
- pg_close($dbcon);
+$dbcon = null;
 
 ?>
