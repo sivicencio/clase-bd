@@ -1,14 +1,15 @@
 <html>
-<head>
-<title>Reserva</title>
-</head>
-<body>
-<form action="solicitud.php" method="post">
- <p> RUT Cliente: <input type="text" name="rut" maxlength="100"/></p>
- <p> Fecha: <input type="datetime" name="fecha" maxlength="100"/></p>
- <p> Mesa: <input type="text" name="tab" maxlength="100"/></p>
- <p><input type="submit" /></p>
-</form>
-
-</body>
+    <head>
+        <title>Reservar Mesa</title>
+        <link rel='stylesheet' href='estilos.css'>
+    </head>
+    <body>
+        <form class='contacto' action ='solicitud.php' method= "post">
+            <div><label>RUT:</label><input type='text' name = 'rut' value=''></div>
+            <div><label>Mesa:</label><input type='text' name = 'tab'  value=''></div>
+            <div><label>Fecha:</label><input type='text' name = 'fecha'  value=''></div>
+            <div><label>Mensaje:</label><textarea rows='6'></textarea></div>
+            <div><input type='submit' value='Envia Mensaje'></div>
+        </form>
+    </body>
 </html>

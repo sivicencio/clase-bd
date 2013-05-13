@@ -1,16 +1,29 @@
 <?php
-$dbcon = pg_connect("host=localhost dbname=grupo20 user=grupo20 password=MDA0MGQy");
+header('Content-Type: text/html; charset=utf-8');
+echo '<style type="text/css">';
+include 'estilos.css';
+echo '</style>';
 
-$result = pg_query($dbcon, "SELECT fname, specialty FROM chefs;");
-if (!$result) {
-  echo "An error occurred.\n";
-  exit;
-}
+$dbcon = new PDO("pgsql:dbname=grupo20;host=localhost","grupo20","MDA0MGQy");
+$sql = "SELECT fname, specialty FROM chefs;";
+echo "<body>\n";
+echo "<table class = contacto>\n";
+echo "<tr>\n";
+echo "<td>Chef</td>\n";
+echo "<td>Especialidad</td>\n";
+echo "</tr>\n";
 
-while ($row = pg_fetch_row($result)) {
-  echo "Chef: $row[0]  Especialidad: $row[1]";
-  echo "<br />\n";
+foreach($dbcon->query($sql) as $row)
+{
+  echo "<tr>\n";
+  echo "<td>" .$row['fname'] ."</td>\n";
+  echo "<td>" .$row['specialty'] ."</td>\n";
+  echo "</tr>\n";
 }
+$dbcon = null;
+
+echo "</table>";
+echo "</body";
 
 
 ?>
