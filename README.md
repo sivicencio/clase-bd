@@ -23,7 +23,6 @@ Clases prácticas IIC2413 Bases de Datos
 * Modelo de Datos
 
 ### PHP
-------------------------
 * Qué es (lenguaje de scripting)
 * Características principales (variables, loosely-typed)
 * Creación de funciones
