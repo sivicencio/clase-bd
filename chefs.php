@@ -1,25 +1,29 @@
-<?php
-define('SMARTY_DIR','/Users/sivicencio/Documents/Server/clase_bd/includes/Smarty-3.1.13/libs/');
-require_once(SMARTY_DIR . 'Smarty.class.php');
-$smarty = new Smarty();
+<html><?php
+header('Content-Type: text/html; charset=utf-8');
+echo '<style type="text/css">';
+include 'stylesheets/estilos.css';
+echo '</style>';
 
 $dbcon = new PDO("pgsql:dbname=clases_bd;host=localhost","sivicencio","");
-$sql = "SELECT * FROM chefs;";
+$sql = "SELECT fname, specialty FROM chefs;";
 ?>
+
+<body>
+<table class = contacto>
+<tr>
+<td>Chef</td>
+<td>Especialidad</td>
+</tr>
 
 <?php
-$chefs = array();
 foreach($dbcon->query($sql) as $row)
 {
-  $chefs[] = $row;
-  // echo "<tr>\n";
-  // echo "<td>" .$row['fname'] ."</td>\n";
-  // echo "<td>" .$row['specialty'] ."</td>\n";
-  // echo "</tr>\n";
+  echo "<tr>\n";
+  echo "<td>" .$row['fname'] ."</td>\n";
+  echo "<td>" .$row['specialty'] ."</td>\n";
+  echo "</tr>\n";
 }
-$dbcon = null;
-$smarty -> assign("chefs", $chefs);
-$smarty -> display("chefs.tpl");
+ $dbcon = null;
 ?>
-
-
+</table>
+</body>
