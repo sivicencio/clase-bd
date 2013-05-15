@@ -1,3 +1,8 @@
+<?php
+$dbcon = new PDO("pgsql:dbname=clases_bd;host=localhost","sivicencio","");
+$sql = "SELECT * FROM chefs;";
+?>
+
 <html>
   <head>
     <title>BD Restaurant</title>
@@ -26,8 +31,23 @@
       </div>
 
       <div class="content">
-        <h2>Ven a disfrutar en familia</h2>
-        <p>Las mejores carnes de Chile.</p>
+        <table class = contacto>
+        <tr>
+          <td>Chef</td>
+          <td>Especialidad</td>
+        </tr>
+        <?php
+        foreach($dbcon->query($sql) as $row) {
+        ?>
+          <tr>
+            <td><?php echo $row['lname']?></td>
+            <td><?php echo $row['specialty']?></td>
+          </tr>
+        <?php
+        }
+         $dbcon = null;
+        ?>
+        </table>
       </div>
 
       <div class="footer">

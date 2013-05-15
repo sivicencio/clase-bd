@@ -26,8 +26,12 @@
       </div>
 
       <div class="content">
-        <h2>Ven a disfrutar en familia</h2>
-        <p>Las mejores carnes de Chile.</p>
+        <form class='contacto' action ='solicitud.php' method= "post">
+          <div><label>RUT:</label><input type='text' name = 'rut' value=''></div>
+          <div><label>Mesa:</label><input type='text' name = 'tab'  value=''></div>
+          <div><label>Fecha:</label><input type='text' name = 'fecha'  value=''></div>
+          <div><input type='submit' value='Pedir Reserva'></div>
+        </form>
       </div>
 
       <div class="footer">

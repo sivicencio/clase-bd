@@ -1,3 +1,14 @@
+<?php
+
+$precio = 0;
+if ($_GET['precio']){
+  $precio =$_GET['precio'];
+}
+
+$dbcon = new PDO("pgsql:dbname=clases_bd;host=localhost","sivicencio","");
+$sql= "SELECT name, description, price FROM plates WHERE price > '$precio';";
+?>
+
 <html>
   <head>
     <title>BD Restaurant</title>
@@ -26,8 +37,25 @@
       </div>
 
       <div class="content">
-        <h2>Ven a disfrutar en familia</h2>
-        <p>Las mejores carnes de Chile.</p>
+        <table class = contacto>
+        <tr>
+          <td>Plato</td>
+          <td>Descripción</td>
+          <td>Precio</td>
+        </tr>
+        <?php
+        foreach($dbcon->query($sql) as $row) {
+        ?>
+          <tr>
+            <td><?php echo $row['name']?></td>
+            <td><?php echo $row['description']?></td>
+            <td><?php echo $row['price']?></td>
+          </tr>
+        <?php
+        }
+         $dbcon = null;
+        ?>
+        </table>
       </div>
 
       <div class="footer">

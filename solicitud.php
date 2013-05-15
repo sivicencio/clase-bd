@@ -1,3 +1,35 @@
+
+<?php
+
+
+$dbcon = new PDO("pgsql:dbname=clases_bd;host=localhost","sivicencio","");
+
+$sql ="INSERT INTO reservations (rdate,client_rut,table_tnumber) VALUES ('$_POST[fecha]','$_POST[rut]','$_POST[tab]');";
+try {
+	if($dbcon->exec($sql)) {
+	 $res = "Reserva exitosa";
+	}
+	else {
+	 $res = "Reserva Fallida";
+	}
+}
+catch(PDOException $e){
+    	
+}
+
+if (!$_POST['rut'] ) {
+   $res ="Falta RUT";
+}
+if (!$_POST['fecha']) {
+    $res ="Falta fecha";
+}
+if (!$_POST['tab'] ) {
+   $res ="Falta mesa";
+}
+$dbcon=null;
+?>
+
+
 <html>
   <head>
     <title>BD Restaurant</title>
@@ -26,8 +58,9 @@
       </div>
 
       <div class="content">
-        <h2>Ven a disfrutar en familia</h2>
-        <p>Las mejores carnes de Chile.</p>
+        <form class='contacto'
+          <div><label>Resultado Operacion: <?php echo $res;?></label></div>
+        </form>
       </div>
 
       <div class="footer">
@@ -38,3 +71,4 @@
     </div>
   <body>
 </html>
+
