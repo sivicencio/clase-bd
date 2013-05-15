@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>BD Restaurant</title>
+    <title>{block name="title"}{/block}</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
-    <meta charset='utf-8' />
+    <meta charset="utf-8">
   </head>
 
   <body>
@@ -10,7 +10,7 @@
       <div class="header">
         <div class="header-content">
           <h1>
-            <a href="/clase_bd">BD Restaurant</a>
+            <a href="/clase_bd">{$app_name}</a>
           </h1>
           <ul>
             <li>
@@ -27,8 +27,7 @@
       </div>
 
       <div class="content">
-        <h2>¡Ven a disfrutar en familia de las mejores carnes de Chile!</h2>
-        <img src="images/bife.jpg" />
+        {block name="content"}{/block}
       </div>
 
       <div class="footer">

@@ -27,8 +27,9 @@
       </div>
 
       <div class="content">
-        <h2>¡Ven a disfrutar en familia de las mejores carnes de Chile!</h2>
-        <img src="images/bife.jpg" />
+        <form class='contacto'
+          <div><label>Resultado Operación: <?php echo $res;?></label></div>
+        </form>
       </div>
 
       <div class="footer">
@@ -39,3 +40,4 @@
     </div>
   <body>
 </html>
+

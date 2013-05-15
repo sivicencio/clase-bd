@@ -2,7 +2,7 @@
   <head>
     <title>BD Restaurant</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
-    <meta charset='utf-8' />
+    <meta charset="utf-8" />
   </head>
 
   <body>
@@ -27,8 +27,23 @@
       </div>
 
       <div class="content">
-        <h2>¡Ven a disfrutar en familia de las mejores carnes de Chile!</h2>
-        <img src="images/bife.jpg" />
+        <table class = contacto>
+        <tr>
+          <td>Chef</td>
+          <td>Especialidad</td>
+        </tr>
+        <?php
+        foreach($chefs as $chef) {
+        ?>
+          <tr>
+            <td><?php echo $chef['lname']?></td>
+            <td><?php echo $chef['specialty']?></td>
+          </tr>
+        <?php
+        }
+         $dbcon = null;
+        ?>
+        </table>
       </div>
 
       <div class="footer">
