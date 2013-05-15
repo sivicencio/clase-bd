@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <html>
   <head>
     <title>BD Restaurant</title>
@@ -13,7 +8,9 @@
     <div id="container">
       <div class="header">
         <div class="header-content">
-          <h1>BD Restaurant</h1>
+          <h1>
+            <a href="/clase_bd">BD Restaurant</a>
+          </h1>
           <ul>
             <li>
               <a href="platos.php">Platos</a>
