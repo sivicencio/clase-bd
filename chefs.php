@@ -52,7 +52,7 @@ $sql = "SELECT * FROM chefs;";
 
       <div class="footer">
         <div class="footer-content">
-          2013. Todos los derechos reservados
+          2013. IIC2413. Todos los derechos reservados
         </div>
       </div>
     </div>

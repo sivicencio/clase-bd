@@ -26,13 +26,13 @@
       </div>
 
       <div class="content">
-        <h2>Ven a disfrutar en familia</h2>
-        <p>Las mejores carnes de Chile.</p>
+        <h2>¡Ven a disfrutar en familia las mejores carnes de Chile!</h2>
+        <img src="images/bife.jpg" />
       </div>
 
       <div class="footer">
         <div class="footer-content">
-          2013. Todos los derechos reservados
+          2013. IIC2413. Todos los derechos reservados
         </div>
       </div>
     </div>
