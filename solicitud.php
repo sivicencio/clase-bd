@@ -65,7 +65,7 @@ $dbcon=null;
 
       <div class="footer">
         <div class="footer-content">
-          22013. IIC2413. Todos los derechos reservados
+          2013. IIC2413. Todos los derechos reservados
         </div>
       </div>
     </div>
